@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Drag and Drop Lean Kanban Board Tool</title>
+  
+  
+  <link rel='stylesheet' href='css/ajax/libs/normalize/8.0.0/normalize.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  
+  <header>
+  <img id="img">
+</header>
+
+<section class="add-task-container">
+  <input type="text" maxlength="12" id="taskText" placeholder="Yeni görev..." onkeydown="if (event.keyCode == 13)
+                        document.getElementById('add').click()">
+  <button id="add" class="button add-button" onclick="addTask()">Yeni Görev Ekle</button>
+</section>
+
+<div class="container">
+  <ul class="columns">
+
+    <li class="column to-do-column">
+      <div class="column-header">
+        <h4>Yapılacaklar</h4>
+      </div>
+      <ul class="task-list" id="to-do">
+        <li class="task">
+          <p>Analiz</p>
+        </li>
+        <li class="task">
+          <p>Kodlama</p>
+        </li>
+        <li class="task">
+          <p>Kart Sıralaması</p>
+        </li>
+        <li class="task">
+          <p>Tedbir</p>
+        </li>
+      </ul>
+    </li>
+
+    <li class="column doing-column">
+      <div class="column-header">
+        <h4>İş Çalışmalarım</h4>
+      </div>
+      <ul class="task-list" id="doing">
+        <li class="task">
+          <p>Müşteri Talepleri</p>
+        </li>
+        <li class="task">
+          <p>Kullanıcı Testi</p>
+        </li>
+        <li class="task">
+          <p>Prototip</p>
+        </li>
+      </ul>
+    </li>
+
+    <li class="column done-column">
+      <div class="column-header">
+        <h4>Yapılanlar</h4>
+      </div>
+      <ul class="task-list" id="done">
+        <li class="task">
+          <p>Fikir</p>
+        </li>
+        <li class="task">
+          <p>Skeçler</p>
+        </li>
+      </ul>
+    </li>
+
+    <li class="column trash-column">
+      <div class="column-header">
+        <h4>Çöp</h4>
+      </div>
+      <ul class="task-list" id="trash">
+        <li class="task">
+          <p>Röportajlar</p>
+        </li>
+        <li class="task">
+          <p>Araştırma</p>
+        </li>
+
+      </ul>
+      <div class="column-button">
+        <button class="button delete-button" onclick="emptyTrash()">Sil</button>
+      </div>
+    </li>
+
+  </ul>
+</div>
+
+<footer style="font-weight:bold;">
+  <p>Bu uygulama <a href="https://github.com/ensdmr7" target="_blank">Enes Demir</a> Tarafından Yapılmıştır.</p>
+</footer>
+  <script src='js/ajax/libs/dragula/3.7.2/dragula.js'></script>
+    <script  src="js/index.js"></script>
+  <script src="js/jquery/jquery-1.7.2.min.js"></script>
+
+
+  
+  <script>
+  $(function(){
+  $("img#img").attr({
+    "src" : "images/to.fw.png",
+    
+  });
+});
+  </script>
+
+</body>
+</html>
